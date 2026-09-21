@@ -5,7 +5,7 @@ import align_like_reference  # ดึงฟังก์ชันมาจาก�
 
 st.set_page_config(page_title="PPTX Auto Alignment Tool", layout="centered")
 
-st.title("🧩 PPTX Auto Alignment Tool")
+st.title("PPTX Auto Alignment Tool")
 st.write("อัปโหลดไฟล์ PowerPoint เพื่อจัดตำแหน่งรูป/ชื่อ/รหัส/ช่องสี ให้ตรงกับหน้าต้นแบบโดยอัตโนมัติ")
 
 # 1. รับไฟล์ PPTX จากผู้ใช้
@@ -19,7 +19,7 @@ with col2:
     targets_input = st.text_input("หน้าปลายทางที่ต้องการจัด (เช่น 2-5 หรือ 2,4,6)", value="", help="ถ้าเว้นว่างไว้จะทำทุกหน้าที่เหลือ")
 
 # 3. ปุ่มประมวลผล
-if uploaded_file is not None and st.button("🚀 เริ่มจัดตำแหน่ง PPTX", type="primary"):
+if uploaded_file is not None and st.button("เริ่มจัดตำแหน่ง PPTX", type="primary"):
     with st.spinner("กำลังประมวลผลไฟล์ PowerPoint..."):
         with tempfile.TemporaryDirectory() as tmpdir:
             input_path = os.path.join(tmpdir, uploaded_file.name)
@@ -54,7 +54,7 @@ if uploaded_file is not None and st.button("🚀 เริ่มจัดตำ�
                 if os.path.exists(output_path):
                     with open(output_path, "rb") as f:
                         st.download_button(
-                            label="📥 ดาวน์โหลดไฟล์ที่จัดเรียบร้อยแล้ว",
+                            label="ดาวน์โหลดไฟล์ที่จัดเรียบร้อยแล้ว",
                             data=f,
                             file_name="aligned_" + uploaded_file.name,
                             mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
